@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/benny/.oh-my-zsh
+  export ZSH=/home/$USER/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -53,7 +53,7 @@ plugins=(git bundler)
 
 # User configuration
 
-  export PATH="/usr/lib64/mpi/gcc/openmpi/bin:/home/benny/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games"
+  export PATH="/usr/lib64/mpi/gcc/openmpi/bin:/home/$USER/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
