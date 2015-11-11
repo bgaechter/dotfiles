@@ -37,8 +37,6 @@ set number
 
 set showcmd	" show last command in the bottom right
 
-set cursorline	" highlight current active line
-set ruler	" always show current position
 
 " Line wrap (number of cols)
 set wrap	    " wrap lines only visually
