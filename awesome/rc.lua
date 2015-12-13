@@ -449,8 +449,6 @@ awful.util.spawn_with_shell("run_once firefox")
 -- configuration - edit to your liking
 wp_index = 1
 wp_timeout  = 20
-wp_path = "/home/benny/Pictures/"
-wp_files = { "29125-cheshire-cat-1920x1200-movie-wallpaper.jpg", "emblems_house_greyjoy_lannister_stark_baratheon_kings_1920x1080_27355.jpg", "I4AYZzz.jpg", "tAexzUd.jpg", "yiYtEm3.jpg", "84VbAGD.png", "eWWqESX.jpg", "iUGFHJr.jpg" ,"tcD9kwI.jpg", "ZsM2wBw.png", "bk98GsW.jpg", "EXqhKGT.jpg", "martell-game-of-thrones-wallpaper.jpg", "CQG5FKx.jpg", "Ogn0awV.jpg", "uv2TuK0.jpg", "cqxoTTv.jpg", "GdwwIo2.jpg", "rtQB4zT.jpg"  }
  
 -- setup the timer
 wp_timer = timer { timeout = wp_timeout }
