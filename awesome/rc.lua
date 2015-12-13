@@ -10,6 +10,8 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+-- For automatic changing wallpapers
+local lfs = require'lfs'
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -449,6 +451,11 @@ awful.util.spawn_with_shell("run_once firefox")
 -- configuration - edit to your liking
 wp_index = 1
 wp_timeout  = 20
+wp_path = "/home/$USER/Pictures/Wallpapers"
+wp_files = { }
+for file in lfs.dir(wp_path) do
+	table.insert(wp_files, file)
+end
  
 -- setup the timer
 wp_timer = timer { timeout = wp_timeout }
