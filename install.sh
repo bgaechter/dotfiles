@@ -17,4 +17,5 @@ cp -i zshrc ~/.zshrc
 # install vim plugins
 vim +PluginInstall +qall
 
-
+cd ~/.vim/bundle/YouCompleteMe
+python2 install.py --clang-completer --system-libclang --system-boost
