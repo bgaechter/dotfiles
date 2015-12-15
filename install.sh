@@ -32,6 +32,7 @@ if [ ! -d "$AWESOME_DIR" ]; then
 fi
 cp -i awesome/rc.lua ~/.awesome/rc.lua
 cp -i zshrc ~/.zshrc 
+cp -i ycm_extra_conf.py ~/.ycm_extra_conf.py
 
 # install vim plugins
 vim +PluginInstall +qall
