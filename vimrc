@@ -5,25 +5,13 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 Bundle 'gmarik/Vundle.vim'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'kien/ctrlp.vim'
-Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'Syntastic'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'Shougo/neocomplete'
 Bundle 'nvie/vim-flake8'
-"Bundle 'davidhalter/jedi-vim'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'Raimondi/delimitMate'
 Bundle 'bling/vim-airline'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'majutsushi/tagbar.git'
 Bundle 'Valloric/YouCompleteMe'
 
 " see :h vundle for more details or wiki for FAQ
