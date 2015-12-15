@@ -5,14 +5,14 @@
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="af-magic"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="true"
+# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -53,7 +53,7 @@ plugins=(git bundler compleat history pip python )
 
 # User configuration
 
-  export PATH="/usr/lib64/mpi/gcc/openmpi/bin:/home/$USER/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games"
+export PATH="/usr/lib64/mpi/gcc/openmpi/bin:/home/$USER/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh

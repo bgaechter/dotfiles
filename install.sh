@@ -8,11 +8,11 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 
 # move the dotfiles
-cp vimrc ~/.vimrc
-cp tmux.conf ~/.tmux.conf
+cp -i vimrc ~/.vimrc
+cp -i tmux.conf ~/.tmux.conf
 mkdir -p ~/.awesome/
-cp awesome/rc.lua ~/.awesome/rc.lua
-cp zshrc ~/.zshrc 
+cp -i awesome/rc.lua ~/.awesome/rc.lua
+cp -i zshrc ~/.zshrc 
 
 # install vim plugins
 vim +PluginInstall +qall
