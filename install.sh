@@ -2,8 +2,8 @@
 
 VUNDLE_DIR=~/.vim/bundle/Vundle.vim/
 AWESOME_DIR=~/.awesome
-LIBCLANG_INSTALLED=$(ldconfig -p | grep libclang | wc -l)
-LIBBOOST_INSTALLED=$(ldconfig -p | grep libboost | wc -l)
+LIBCLANG_INSTALLED=$(sudo ldconfig -p | grep libclang | wc -l)
+LIBBOOST_INSTALLED=$(sudo ldconfig -p | grep libboost | wc -l)
 
 if [ "$LIBCLANG_INSTALLED" -eq 0 ]; then
 	echo "Please install libclang"
