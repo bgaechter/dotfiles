@@ -88,3 +88,4 @@ nnoremap <silent> <leader>b :TagbarToggle<CR>
 nnoremap <leader>. :CtrlPTag<cr>
 vmap <C-x> :!pbcopy<CR>  
 vmap <C-c> :w !pbcopy<CR><CR> 
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
