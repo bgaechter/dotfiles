@@ -36,7 +36,7 @@ function install_ycm {
 
 	# build YouCompleteMe
 	cd ~/.vim/bundle/YouCompleteMe
-	python2 install.py --clang-completer --system-libclang --system-boost
+	python3 install.py --all
 }
 
 while true; do

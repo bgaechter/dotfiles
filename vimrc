@@ -4,15 +4,12 @@ filetype off                  " required!
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
-Bundle 'gmarik/Vundle.vim'
-Bundle 'Syntastic'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'nvie/vim-flake8'
-Bundle 'bling/vim-airline'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'bling/vim-airline'
+Plugin 'ycm-core/YouCompleteMe'
 
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle commands are not allowed.
@@ -30,7 +27,6 @@ let g:solarized_termcolors=256
 colorscheme solarized
 
 
-" ===========sontek.net============
 set autoindent    " always set autoindenting on
 set backspace=indent,eol,start          " allow backspacing over everything in insert mode
 set copyindent    " copy the previous indentation on
@@ -48,7 +44,7 @@ set noerrorbells         " don't beep
 set nowrap        " don't wrap lines
 set number        " always show line numbers
 set ruler
-set shiftwidth=4  " number of spaces to use for
+set shiftwidth=2  " number of spaces to use for
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set showcmd
 set showmatch     " set show matching parenthesis
@@ -57,7 +53,7 @@ set smarttab      " insert tabs on the
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-set tabstop=4     " a tab is four spaces
+set tabstop=2     " a tab is four spaces
 set showtabline=2
 set title                " change the terminal's title
 set ttyfast
@@ -65,27 +61,19 @@ set undolevels=1000      " use many muchos levels of undo
 set visualbell           " don't beep
 set wildignore=*.swp,*.bak,*.pyc,*.class
 
-let g:syntastic_auto_loc_list=1
-let g:syntastic_loc_list_height=5
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:airline#extensions#tabline#enabled = 1
 let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let mapleader=","
 
-autocmd filetype python set expandtab
-"autocmd FileType  python setlocal textwidth=79
-"autocmd BufWritePost *.py call Flake8()
+let g:ycm_clangd_uses_ycmd_caching = 0
+let g:ycm_clangd_binary_path = exepath("clangd")
 
-nnoremap <F6> :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+autocmd filetype python set expandtab
+
 map <C-o> :NERDTreeToggle<CR>
 map <C-n> :nohlsearch<CR>
-inoremap <leader>w <esc>:w<cr>a
-inoremap <leader>q <esc>:q<cr>
 inoremap <leader>o <esc>o<cr>i
 nnoremap <silent> <leader>b :TagbarToggle<CR>
 nnoremap <leader>. :CtrlPTag<cr>
-vmap <C-x> :!pbcopy<CR>  
-vmap <C-c> :w !pbcopy<CR><CR> 
-nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
