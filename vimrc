@@ -10,6 +10,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'fatih/vim-go'
 
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle commands are not allowed.
@@ -20,11 +21,9 @@ filetype on
 "======Solarized theme============
 syntax on
 syntax enable
-let g:solarized_termtrans = 1
 set background=dark
 set t_Co=256
-let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme molokai
 
 
 set autoindent    " always set autoindenting on
@@ -77,3 +76,10 @@ map <C-n> :nohlsearch<CR>
 inoremap <leader>o <esc>o<cr>i
 nnoremap <silent> <leader>b :TagbarToggle<CR>
 nnoremap <leader>. :CtrlPTag<cr>
+
+
+map <C-i> :GoImport<CR>
+map <C-b> :GoBuild<CR>
+map <C-r> :GoRun<CR>
+map <C-j> :GoDef<CR>
+map <C-v> :GoMetaLinter<CR>
