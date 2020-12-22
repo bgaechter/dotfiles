@@ -11,6 +11,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'fatih/vim-go'
+Plugin 'nvie/vim-flake8'
+Plugin 'vim-syntastic/syntastic'
 
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle commands are not allowed.
@@ -66,10 +68,20 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let mapleader=","
 
+
 let g:ycm_clangd_uses_ycmd_caching = 0
 let g:ycm_clangd_binary_path = exepath("clangd")
 
+
+let python_highlight_all=1
+let g:ycm_autoclose_preview_window_after_completion=1
+
 autocmd filetype python set expandtab
+map <C-j> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <C-f> :YcmCompleter FixIt<CR>
+map <C-d> :YcmCompleter GetDoc<CR>
+map <C-l> :YcmCompleter Format<CR>
+map <C-s> :tab split<CR>
 
 map <C-o> :NERDTreeToggle<CR>
 map <C-n> :nohlsearch<CR>
@@ -77,9 +89,7 @@ inoremap <leader>o <esc>o<cr>i
 nnoremap <silent> <leader>b :TagbarToggle<CR>
 nnoremap <leader>. :CtrlPTag<cr>
 
-
 map <C-i> :GoImport<CR>
 map <C-b> :GoBuild<CR>
 map <C-r> :GoRun<CR>
-map <C-j> :GoDef<CR>
 map <C-v> :GoMetaLinter<CR>
