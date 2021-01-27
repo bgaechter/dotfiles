@@ -1,18 +1,23 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
+"set rtp+=~/.vim/bundle/Vundle.vim/
+"call vundle#rc()
+call plug#begin()
+Plug 'tpope/vim-sensible'
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'bling/vim-airline'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'fatih/vim-go'
-Plugin 'nvie/vim-flake8'
-Plugin 'vim-syntastic/syntastic'
+Plug 'gmarik/Vundle.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
+Plug 'bling/vim-airline'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'fatih/vim-go'
+Plug 'nvie/vim-flake8'
+Plug 'vim-syntastic/syntastic'
+Plug 'hashivim/vim-terraform'
+
+call plug#end()
 
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle commands are not allowed.
@@ -20,7 +25,6 @@ Plugin 'vim-syntastic/syntastic'
 filetype plugin indent on     " required!
 filetype plugin on
 filetype on
-"======Solarized theme============
 syntax on
 syntax enable
 set background=dark
@@ -68,13 +72,37 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let mapleader=","
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:terraform_align=1
+let g:terraform_fold_sections=1
+let g:terraform_fmt_on_save=1
+
+" Currently not working properly
+let g:ycm_language_server = [
+			\   {
+			\     'name': 'terraform',
+			\     'cmdline': [ '/usr/local/bin/terraform-ls', 'serve' ],
+			\     'filetypes': [ 'terraform', 'tf' ]
+			\   }
+			\ ]
 
 let g:ycm_clangd_uses_ycmd_caching = 0
 let g:ycm_clangd_binary_path = exepath("clangd")
-
+let g:ycm_goto_buffer_command = 'split-or-existing-window'
 
 let python_highlight_all=1
 let g:ycm_autoclose_preview_window_after_completion=1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Create default mappings
+let g:NERDCreateDefaultMappings = 0
+
+map <leader>c :call NERDComment(0,"toggle")<CR>
 
 autocmd filetype python set expandtab
 map <C-j> :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -84,10 +112,8 @@ map <C-l> :YcmCompleter Format<CR>
 map <C-s> :tab split<CR>
 
 map <C-o> :NERDTreeToggle<CR>
+
 map <C-n> :nohlsearch<CR>
-inoremap <leader>o <esc>o<cr>i
-nnoremap <silent> <leader>b :TagbarToggle<CR>
-nnoremap <leader>. :CtrlPTag<cr>
 
 map <C-i> :GoImport<CR>
 map <C-b> :GoBuild<CR>
